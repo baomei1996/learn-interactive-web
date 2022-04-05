@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web</title>
+  <style>
+    @keyframes sample-ani {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(300px, 0);
+        background: pink;
+      }
+      100% {
+        transform: translate(400px, 500px);
+      }
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #fff000;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: sample-ani 2s cubic-bezier(0.46,-0.37, 1, 1) forwards alternate;
+      /* keyframe : 대상이 이동하다가 방향을 틀어 이동할 때의 지점
+          %별 액션을 규정할 수 있음 지속시간, 흐름(가속도), 계속 진행할건지 등을 규정할 수 있음
+          infinite: 무한 재생 forwards: 끝나는 지점에서 멈추도록 
+          alternate: 진행했던 에니메이션을 따라 돌아가는 reverse
+      */
+    }
+    .box:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <h1>Animation</h1>
+  <div class="box">Box</div>
+</body>
+</html>
