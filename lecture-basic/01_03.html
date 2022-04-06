@@ -5,8 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Web</title>
+  <style>
+    @keyframes spaceship-ani {
+      to {
+        background-position: -886px 0;
+      }
+      /* 0% = from (생략가능) 100 % = to */
+    }
+    .spaceship {
+      width: 115px;
+      height: 271px;
+      background: url('images/keyframe_test.png') no-repeat 0 0 / auto 271px;
+      animation: spaceship-ani 1s infinite reverse steps(7);
+    }
+  </style>
 </head>
 <body>
   <h1>Frame by frame</h1>
+  <div class="spaceship">
+
+  </div>
 </body>
 </html>
