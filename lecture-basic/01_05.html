@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web(Flex Box)</title>
+  <style>
+    .container {
+      display: flex;
+      /* flex-direction: column-reverse; default = row */
+      justify-content: flex-start;
+      /* justify-content: space-around; default = flex-start*/
+      height: 80vh;
+      align-items: stretch;
+      /* align-items: stretch; 수직 방향 정렬 default = stretch*/
+      background: gray;
+    }
+    .item {
+      /* flex-grow: 1; */
+      /* flex-basis: 0; */
+      flex: 1;
+      /* flex-basis: auto; default */
+      padding: 2em;
+      border: 3px solid black;
+      background: white;
+    }
+    .item:nth-child(1) {flex-grow: 1;}
+    .item:nth-child(2) {flex-grow: 5;}
+    .item:nth-child(3) {flex-grow: 2;}
+    .item:nth-child(4) {flex-grow: 3;}
+    .item:nth-child(5) {flex-grow: 1;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">AAA</div>
+    <div class="item">B</div>
+    <div class="item">CCCCC</div>
+    <div class="item">DDD</div>
+    <div class="item">E</div>
+  </div>
+</body>
+</html>
