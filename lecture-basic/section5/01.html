@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interactive Web</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .characters {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: #fff000;
+        }
+        .ilbuni {
+            width: 100px;
+            cursor: pointer;
+        }
+        .characters .ilbuni {
+            display: inline-block;
+        }
+        .special {
+            border: 10px dashed red;
+        }
+    </style>
+    <script>
+      // window.addEventListener('load', function() {
+      //   const ilbuni = document.querySelector('.ilbuni.c')
+
+      //   function clickIlbuniHandler() {
+      //     ilbuni.classList.toggle('special')
+      //   }
+      //   ilbuni.addEventListener('click', clickIlbuniHandler)
+      // })
+      // 이 곳에 정의하여도 아직 읽지 않은 상태(로드되지 않은) 이기때문에 인식하지 못함 하기 위한 방법으로는 윈도우가 로드되면 
+      // load or DOMContentLoaded
+    </script>
+</head>
+<body>
+    <div class="characters">
+        <div class="ilbuni a">
+            <img src="images/ilbuni_0.png" alt="일분이">
+        </div>
+        <div class="ilbuni b">
+            <img src="images/ilbuni_1.png" alt="일분이">
+        </div>
+        <div class="ilbuni c">
+            <img src="images/ilbuni_2.png" alt="일분이">
+        </div>
+        <div class="ilbuni d">
+            <img src="images/ilbuni_3.png" alt="일분이">
+        </div>
+    </div>
+
+    <script>
+        // 직접 타이핑 해보세요
+        // 전역 변수를 최소화 하는 것을 지향해야함 => 다른 개발자와 협업하는 경우, 코드가 길어지는 경우
+        // 겹치는 부분이 있을 수 있음 그래서 함수 단위로 
+
+        (function() {
+          const characters = document.querySelector('.characters')
+
+          function clickHandler(e) {
+            // console.log(this);
+            // console.log(e);
+            // console.log(e.currentTarget); // == this
+            //event handler 안에서의 this 는 이벤트가 동작되는 자신을 가리킴 
+            console.log(e.target);
+          }
+          characters.addEventListener('click', clickHandler);
+        })() // 초기 한번만 호출하면 되는 함수의 전역변수 사용을 방지하기 위해 함수를 감싸 실행 연산자를 붙이는 방법
+
+    </script>
+</body>
+</html>
