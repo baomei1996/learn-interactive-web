@@ -70,7 +70,7 @@
             // console.log(e);
             // console.log(e.currentTarget); // == this
             //event handler 안에서의 this 는 이벤트가 동작되는 자신을 가리킴 
-            console.log(e.target);
+            console.log(e.target); // 내가 지금 이벤틀르 하는 곳을 가리킴
           }
           characters.addEventListener('click', clickHandler);
         })() // 초기 한번만 호출하면 되는 함수의 전역변수 사용을 방지하기 위해 함수를 감싸 실행 연산자를 붙이는 방법
