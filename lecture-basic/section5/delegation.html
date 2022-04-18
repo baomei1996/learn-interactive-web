@@ -5,21 +5,37 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .menu-btn {
+      border: 5px solid white;
+      border-radius: 20px;
+      font: 900 1.2rem NotoSans;
+    }
+
+    .btn-label {
+      text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+      pointer-events: none;
+    }
+    .icon {
+      width: 60px;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
   <div class="menu">
-    <button class="menu-btn">
-      <img src="./images/ilbuni_1.png" alt="" class="icon" data-value="1">
+    <!-- <button class="menu-btn" data-value="1">
+      <img src="./images/ilbuni_1.png" alt="" class="icon">
       <span class="btn-label">일분이 1</span>
     </button>
-    <button class="menu-btn">
-      <img src="./images/ilbuni_2.png" alt="" class="icon" data-value="2">
+    <button class="menu-btn" data-value="2">
+      <img src="./images/ilbuni_2.png" alt="" class="icon">
       <span class="btn-label">일분이 2</span>
     </button>
-    <button class="menu-btn">
-      <img src="./images/ilbuni_3.png" alt="" class="icon" data-value="3">
+    <button class="menu-btn" data-value="3">
+      <img src="./images/ilbuni_3.png" alt="" class="icon">
       <span class="btn-label">일분이 3</span>
-    </button>
+    </button> -->
   </div>
 
   <script>
@@ -35,12 +51,40 @@
 
     const menu = document.querySelector('.menu')
     function clickHandler (event) {
-      console.log(this);
+      let elem = event.target;
+      while (!elem.classList.contains('menu-btn')) {
+        elem = elem.parentNode;
+        if(elem.nodeName == 'BODY') {
+          elem = null;
+          return;
+        }
+      }
+      //console.log(this);
       //console.log(event.currentTarget);
-      console.log(event.target);
-      console.log(event.target.getAttribute('data-value'));
+      //console.log(event.target);
+      //console.log(event.target.getAttribute('data-value'));
+      console.log(event.target.dataset.value);
     }
-    menu.addEventListener('click', clickHandler)
+    menu.addEventListener('click', clickHandler);
+
+    window.addEventListener('click', () => {
+      const htmlStr = `
+      <button class="menu-btn" data-value="1">
+        <img src="./images/ilbuni_1.png" alt="" class="icon">
+        <span class="btn-label">일분이 1</span>
+      </button>
+      <button class="menu-btn" data-value="2">
+        <img src="./images/ilbuni_2.png" alt="" class="icon">
+        <span class="btn-label">일분이 2</span>
+      </button>
+      <button class="menu-btn" data-value="3">
+        <img src="./images/ilbuni_3.png" alt="" class="icon">
+        <span class="btn-label">일분이 3</span>
+      </button> 
+      `;
+      // 이벤트 위임을 할 경우 동적으로 새로 로드된 컨텐트에 대해서 이벤트를 적용하기 용이 
+      menu.innerHTML = htmlStr
+    })
   </script>
   
 </body>
