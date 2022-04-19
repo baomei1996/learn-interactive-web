@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  <h1>Object</h1>
+
+
+  <script>
+    const person = {}
+    //속성, property 
+    person.name = '일분이';
+    person.age = 10;
+    // method
+    person.introduce = function() {
+      console.log(`안녕하세요? 저는 ${this.name} 이고, 나이는 ${this.age} 살입니다.`);
+    }
+    console.log(person);
+
+    const person2 = {
+      name: '이분이',
+      age: 8,
+      introduce: function() {
+        console.log(`안녕하세요? 저는 ${this.name} 이고, 나이는 ${this.age} 살입니다.`);
+      }
+    }
+
+    // 생성자 (constructor)
+
+    function Person(name, age) {
+      this.nickname = name;
+      this.age = age;
+    }
+
+    
+    // 인스턴스 (instance)
+    const person3 = new Person('삼분이', 22)
+    const person4 = new Person('사분이', 22)
+
+    // 공통으로 사용하는 메서드와 같은 경우는 따로 빼서 공유를 하면 효율적
+
+    Person.prototype.introduce = function () {
+      console.log(`안녕하세요? 저는 ${this.name} 이고, 나이는 ${this.age} 살입니다.`);
+    }
+
+
+    person.introduce();
+    person2.introduce(); 
+  </script>
+</body>
+</html>
