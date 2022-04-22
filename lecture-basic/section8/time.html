@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">cancle</button>
+  <script>
+    // setTimeout(() => {
+    //   console.log('setTimeout!');
+    // }, 1000)
+    let timeId;
+    let n = 0;
+
+    function sample() {
+      n++;
+      console.log(n)
+      if(n > 200) {
+        return
+      };
+      console.log('sample');
+
+      timeId = requestAnimationFrame(sample);
+      // 반복시킬 함수 안에 정의
+      // 1 / 60 (초당) 번 반복을 목표로 하는 함수 
+    }
+
+    // timeId = setTimeout(sample, 3000);
+    // 한번만 실행하는함수 특정 시간동안 지연시키는 기능
+
+    const btn = document.querySelector('.btn');
+
+    // btn.addEventListener('click', () => {
+    //   clearTimeout(timeId);
+
+    // })
+
+    sample();
+
+    // timeId = setInterval(sample, 1000);
+    // 특정 시간동안 반복하는 기능
+
+
+    btn.addEventListener('click', () => {
+      // clearInterval(timeId);
+
+      cancelAnimationFrame(timeId)
+
+    })
+
+    
+  </script>
+</body>
+</html>

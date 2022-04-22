@@ -15,7 +15,7 @@
       border-radius: 50%;
       background: red;
       transition: 1s;
-      animation: ball-ani 1s 3 alternate forwards;
+      /* animation: ball-ani 1s 3 alternate forwards; */
     }
     .ball.end {
       background: dodgerblue;
@@ -36,20 +36,29 @@
   <script>
     const ballElem = document.querySelector(".ball");
 
+    ballElem.addEventListener('click', ()=> {
+      ballElem.style.animation = 'ball-ani 1s 3 forwards';
+    })
+
     ballElem.addEventListener('animationend', function() {
-      ballElem.classList.add('.end')
-    })
-
-    window.addEventListener('click', function(e) {
-      console.log(e.clientX, e.clientY);
-      ballElem.style.transform = `translate(${e.clientX -15}px, ${e.clientY -15}px)`
-    })
-
-    ballElem.addEventListener('transitionend', function(e) {
       ballElem.classList.add('end')
-      console.log(e.elapsedTime); // transition duration
-      console.log(e.propertyName); // transiton 실행된 속성
     })
+
+    ballElem.addEventListener('animationiteration', ()=> {
+      //animationiteration 반복이 될 때 수행되는 함수 
+      console.log('반복!');
+    })
+
+    // window.addEventListener('click', function(e) {
+    //   console.log(e.clientX, e.clientY);
+    //   ballElem.style.transform = `translate(${e.clientX -15}px, ${e.clientY -15}px)`
+    // })
+
+    // ballElem.addEventListener('transitionend', function(e) {
+    //   ballElem.classList.add('end')
+    //   console.log(e.elapsedTime); // transition duration
+    //   console.log(e.propertyName); // transiton 실행된 속성
+    // })
   </script>
 </body>
 </html>
