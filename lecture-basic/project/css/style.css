@@ -5,6 +5,7 @@ body {
   -webkit-overflow-scrolling: touch;
   color: #555;
   background: #fff000;
+  height: 500vw;
 }
 
 .world {
@@ -42,18 +43,23 @@ body {
 }
 
 .wall-left {
-  left: -500vw;
+  /* left: -500vw; */
   width: 1000vw;
-  transform: rotateY(90deg)
+  background: #f8f8f8;
+  transform: rotateY(90deg) translateZ(-500vw);
 }
 
 .wall-right {
-  left: -500vw;
+  /* left: -500vw; */
   width: 1000vw;
-  transform: rotateY(90deg) translateZ(100vw)
+  background: #f8f8f8;
+  transform: rotateY(90deg) translateZ(-400vw);
 }
 
-
+.wall-front-a { transform: translateZ(300vw); }
+.wall-front-b { transform: translateZ(50vw); }
+.wall-front-c { transform: translateZ(-200vw); }
+.wall-front-d { transform: translateZ(-500vw); }
 .wall-content {
   display: flex;
   align-items: center;
