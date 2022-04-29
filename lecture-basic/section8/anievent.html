@@ -49,16 +49,16 @@
       console.log('반복!');
     })
 
-    // window.addEventListener('click', function(e) {
-    //   console.log(e.clientX, e.clientY);
-    //   ballElem.style.transform = `translate(${e.clientX -15}px, ${e.clientY -15}px)`
-    // })
+    window.addEventListener('click', function(e) {
+      console.log(e.clientX, e.clientY);
+      ballElem.style.transform = `translate(${e.clientX -15}px, ${e.clientY -15}px)`
+    })
 
-    // ballElem.addEventListener('transitionend', function(e) {
-    //   ballElem.classList.add('end')
-    //   console.log(e.elapsedTime); // transition duration
-    //   console.log(e.propertyName); // transiton 실행된 속성
-    // })
+    ballElem.addEventListener('transitionend', function(e) {
+      ballElem.classList.add('end')
+      console.log(e.elapsedTime); // transition duration
+      console.log(e.propertyName); // transiton 실행된 속성
+    })
   </script>
 </body>
 </html>
