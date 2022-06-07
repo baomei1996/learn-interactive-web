@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Interactive_section4-js-start",
+			"path": "../../../../Downloads/Interactive_section4-js-start"
+		},
+		{
+			"name": "learn-interactive-web",
+			"path": "../../.."
+		}
+	],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "learn-interactive-web"
+  }
+}
