@@ -28,7 +28,7 @@ export class Text {
       (stageWidth - fontPos.width) / 2,
       fontPos.actualBoundingBoxAscent + 
       fontPos.actualBoundingBoxDescent + 
-      ((stageHeight - fontPos) / 2)
+      ((stageHeight - fontSize) / 2)
     );
 
     return this.dotPos(density, stageWidth, stageHeight);
