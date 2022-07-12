@@ -1,4 +1,4 @@
-import { Visual } from "./visual";
+import { Visual } from "./visual.js";
 
 class App {
   constructor() {
@@ -9,19 +9,11 @@ class App {
       },
       fontactive: () => {
 
-        this.visual = new Visual();
+        // this.visual = new Visual();
         window.addEventListener("resize", this.resize.bind(this), false);
         this.resize();
 
         requestAnimationFrame(this.animate.bind(this));
-
-        // this.text = new Text();
-        // this.text.setText(
-        //   "A",
-        //   2,
-        //   document.body.clientWidth,
-        //   document.body.clientHeight
-        // )
       }
     });
   }
@@ -47,12 +39,14 @@ class App {
 
     this.renderer.resize(this.stageWidth, this.stageHeight);
 
-    this.visual.show(this.stageWidth, this.stageHeight, this.stage);
+    // this.visual.show(this.stageWidth, this.stageHeight, this.stage);
   }
 
   animate(t) {
     requestAnimationFrame(this.animate.bind(this));
-    this.visual.animate();
+
+    // this.visual.animate();
+
     this.renderer.render(this.stage);
   }
 }
