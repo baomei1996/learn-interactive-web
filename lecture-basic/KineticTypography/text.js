@@ -1,6 +1,6 @@
 export class Text {
   constructor() {
-    // this.canvas = document.createElement('canvas');
+    this.canvas = document.createElement('canvas');
     // this.canvas.style.position = 'absolute';
     // this.canvas.style.left = '0';
     // this.canvas.style.top = '0';
@@ -14,8 +14,8 @@ export class Text {
     this.canvas.height = stageHeight;
     
     const myText = str;
-    const fontWidth = 700;
-    const fontSize = 800;
+    const fontWidth = 300;
+    const fontSize = 300;
     const fontName = 'Hind';
 
     this.ctx.clearRect(0, 0, stageWidth, stageHeight);
