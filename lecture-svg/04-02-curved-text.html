@@ -22,6 +22,10 @@
                 font-weight: bold;
                 fill: red;
             }
+
+            .special {
+                fill: aqua;
+            }
         </style>
     </head>
     <body>
@@ -35,10 +39,12 @@
             </defs>
             <text x="50" y="100">
                 <textPath href="#text-curve">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Error, reiciendis! Doloribus molestias id necessitatibus eos
-                    eveniet harum rerum cumque iure, corrupti minus esse
-                    corporis omnis alias incidunt cupiditate ea laudantium!
+                    Lorem ipsum
+                    <tspan class="special">dolor</tspan>
+                    sit amet, consectetur adipisicing elit. Error, reiciendis!
+                    Doloribus molestias id necessitatibus eos eveniet harum
+                    rerum cumque iure, corrupti minus esse corporis omnis alias
+                    incidunt cupiditate ea laudantium!
                 </textPath>
             </text>
         </svg>
