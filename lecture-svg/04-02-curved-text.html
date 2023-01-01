@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SVG</title>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            .svg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #ddd;
+            }
+
+            text {
+                font-size: 1.5rem;
+                font-weight: bold;
+                fill: red;
+            }
+        </style>
+    </head>
+    <body>
+        <svg class="svg">
+            <!-- 나중에 참조한 요소들을 담아두는 tag -->
+            <defs>
+                <path
+                    id="text-curve"
+                    d="M 50 400 C 50 400, 300 500, 400 400 C 400 400, 600 170 700 300"
+                />
+            </defs>
+            <text x="50" y="100">
+                <textPath href="#text-curve">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Error, reiciendis! Doloribus molestias id necessitatibus eos
+                    eveniet harum rerum cumque iure, corrupti minus esse
+                    corporis omnis alias incidunt cupiditate ea laudantium!
+                </textPath>
+            </text>
+        </svg>
+    </body>
+</html>
