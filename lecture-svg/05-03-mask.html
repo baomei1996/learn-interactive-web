@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SVG</title>
+        <style>
+            .the-svg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: #ddd;
+            }
+
+            .the-svg text {
+                font-size: 5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <svg class="the-svg">
+            <path
+                d="M150.81 41.26a80.5 80.5 0 1 0-41.94 114.6l36.28 64.95a12 12 0 1 0 20.95-11.7l-36.29-64.95a80.51 80.51 0 0 0 21-102.9zm-41 91.63a60 60 0 1 1 23.12-81.64 60 60 0 0 1-23.12 81.64z"
+                fill="#ce0000"
+            />
+            <defs>
+                <!-- 검정색에 가까워질수록 점점 연게 처리함 흰색 > 회색 > 검정 -->
+                <mask id="mask-circle">
+                    <circle cx="80.51" cy="80.51" r="60" fill="#ff7745" />
+                </mask>
+                >
+            </defs>
+        </svg>
+    </body>
+</html>
