@@ -22,14 +22,40 @@
     </head>
     <body>
         <svg class="the-svg">
+            <style>
+                @keyframes eye-ani {
+                    to {
+                        transform: scaleY(0.2);
+                    }
+                }
+
+                .left-eye {
+                    animation: eye-ani 1s alternate infinite;
+                    transform-origin: 44px 42px;
+                }
+                .bg {
+                    fill: url(#pattern-bg);
+                }
+            </style>
+            <script>
+                <!-- load - 이미지 src 까지 다 끝나야 이벤트가 실행되고,
+                DOMContentLoaded - dom 구조만 로드되면 이벤트가 실행됨 -->
+                window.addEventListener("load", () => { const magnifierElem =
+                document.querySelector('.magnifier'); console.log(magnifierElem)
+                const maskElem = document.querySelector("#mask-glass circle");
+                window.addEventListener("mousemove", (e) => {
+                magnifierElem.style.transform = `translate(${e.clientX}px,
+                ${e.clientY}px)`; maskElem.style.transform =
+                `translate(${e.clientX}px, ${e.clientY}px)`;}) })
+            </script>
             <pattern x="0" y="0" width="0.1" height="0.1" id="pattern-bg">
                 <path
                     d="M138.61,133a29.89,29.89,0,1,1,21.14-8.75A29.72,29.72,0,0,1,138.61,133Zm0-55.38a25.49,25.49,0,1,0,18,7.46A25.32,25.32,0,0,0,138.61,77.63Z"
                     transform="translate(-107 -64)"
                 />
                 <g>
-                    <circle class="right-eye" cx="19.31" cy="41.98" r="4.69" />
-                    <circle cx="43.8" cy="41.98" r="4.69" />
+                    <circle class="left-eye" cx="19.31" cy="41.98" r="4.69" />
+                    <circle class="" cx="43.8" cy="41.98" r="4.69" />
                 </g>
                 <path
                     class="mouth"
@@ -40,12 +66,7 @@
                     transform="translate(-107 -64)"
                 />
             </pattern>
-            <style>
-                .bg {
-                    fill: url(#pattern-bg);
-                }
-            </style>
-            <g mask="url(#mask-glass">
+            <g mask="url(#mask-glass)">
                 <rect
                     class="bg"
                     x="0"
@@ -56,6 +77,7 @@
                 ></rect>
             </g>
             <path
+                class="magnifier"
                 d="M150.81 41.26a80.5 80.5 0 1 0-41.94 114.6l36.28 64.95a12 12 0 1 0 20.95-11.7l-36.29-64.95a80.51 80.51 0 0 0 21-102.9zm-41 91.63a60 60 0 1 1 23.12-81.64 60 60 0 0 1-23.12 81.64z"
                 fill="#ce0000"
             />
